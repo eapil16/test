@@ -1,0 +1,64 @@
+doctype html
+html(lang="ru")
+	include modules/head	
+
+	body
+		.wrapper 
+			
+			main.main-section
+				.tree-levels
+					.tree-levels-item 
+						.tree-levels-item__caption 
+							.tree-levels-item__caption_button 
+							p.title
+								span Folder 1
+						.tree-levels-item__content
+							.tree-levels-item__content_element 
+								img(src="assets/images/file.svg", alt="")
+								p Item 1.1
+					.tree-levels-item 
+						.tree-levels-item__caption 
+							.tree-levels-item__caption_button 
+							p.title
+								span Folder 2
+						.tree-levels-item__content
+							.tree-levels-item 
+								.tree-levels-item__caption 
+									.tree-levels-item__caption_button 
+									p.title
+										span Subfolder 2.1
+								.tree-levels-item__content
+									.tree-levels-item__content_element 
+										img(src="assets/images/file.svg", alt="")
+										p File 2.1.1
+									.tree-levels-item__content_element 
+										img(src="assets/images/file.svg", alt="")
+										p File 2.1.2
+							.tree-levels-item__content_element 
+								img(src="assets/images/file.svg", alt="")
+								p File 2.2
+					.tree-levels-item.active
+						.tree-levels-item__caption 
+							.tree-levels-item__caption_button 
+							p.title
+								span Folder 3 (closed at start)
+						.tree-levels-item__content
+							.tree-levels-item__content_element 
+								img(src="assets/images/file.svg", alt="")
+								p File 3.1	
+							.tree-levels-item__content_element 
+								img(src="assets/images/file.svg", alt="")
+								p File 3.2	
+							.tree-levels-item__content_element 
+								img(src="assets/images/file.svg", alt="")
+								p File 3.3
+					.tree-levels-item.tree-levels-item__no-subfolder
+						.tree-levels-item__content_element 
+							img(src="assets/images/file.svg", alt="")
+							p File 4		
+
+						
+
+
+			
+		include modules/scripts

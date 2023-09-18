@@ -1,0 +1,234 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: #000000;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+label {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  justify-content: space-between;
+  color: #212121;
+  font-size: 14px;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.tree-levels {
+  margin: 30px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 8px;
+    width: 2px;
+    bottom: 7px;
+    border-left: 2px dotted #9f9f9f;
+  }
+  &-item {
+    display: block;
+    position: relative;
+    padding: 0 0 10px 0;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 23px;
+      width: 6px;
+      height: 2px;
+      border-top: 2px dotted #9f9f9f;
+    }
+    .tree-levels-item {
+      margin: 0 0 10px -25px;
+      padding: 0;
+    }
+    &__caption {
+      display: flex;
+      align-items: center;
+      &_button {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #9f9f9f;
+        position: relative;
+        cursor: pointer;
+        &::after {
+          content: '-';
+          color: #000;
+          font-size: 24px;
+          line-height: 10px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 14px;
+          height: 14px;
+          padding: 0 3px;
+          background: #fff;
+        }
+      }
+      p.title {
+        font-size: 14px;
+        line-height: 14px;
+        color: #000;
+        padding: 0 0 0 35px;
+        position: relative;
+        margin: 0 0 0 5px;
+        &:after {
+          content: '';
+          width: 20px;
+          height: 20px;
+          background: url(../images/folder-open.svg) 0 0 no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: -3px;
+          left: 10px;
+        }
+      }
+    }
+    &__content {
+      margin: 0 0 0 35px;
+      position: relative;
+      padding: 10px 0 0 25px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 8px;
+        width: 2px;
+        bottom: 8px;
+        border-left: 2px dotted #9f9f9f;
+      }
+      &_element {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 0 0 10px 0;
+        &:last-child {
+          margin: 0;
+        }
+        img {
+          max-width: 20px;
+          margin: 0 5px 0 0;
+        }
+        p {
+          font-size: 14px;
+          line-height: 18px;
+          color: #000;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 2px;
+          border-bottom: 2px dotted #9f9f9f;
+          left: -12px;
+          top: 10px;
+        }
+      }
+    }
+    &__no-subfolder {
+      padding: 0 0 0 25px;
+      &::before {
+        display: none;
+      }
+    }
+    &.active {
+      .tree-levels-item__content {
+        display: none;
+      }
+      .tree-levels-item__caption_button {
+        &::after {
+          content: '+';
+          padding: 2px 2px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+
