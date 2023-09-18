@@ -227,6 +227,14 @@ select {
           font-size: 18px;
         }
       }
+      .tree-levels-item__caption {
+        p.title {
+          &:after {
+            background: url(../images/folder.svg) 0 0 no-repeat;
+            background-size: contain;
+          }
+        }
+      }
     }
   }
 }
